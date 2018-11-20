@@ -14,3 +14,36 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require materialize
+
+function list() {
+  document.getElementById('list').style.display = 'block';
+}
+
+function sbp() {
+  document.getElementById('sbp').style.display = 'block'
+  document.getElementById('loadingz').style.display = 'none'
+  document.getElementById('advertising').style.display = 'none'
+  document.getElementById('landrates').style.display = 'none'
+}
+
+function landrates() {
+  document.getElementById('landrates').style.display = 'block'
+  document.getElementById('sbp').style.display = 'none'
+  document.getElementById('advertising').style.display = 'none'
+  document.getElementById('loadingz').style.display = 'none'
+}
+
+function advertising() {
+  document.getElementById('advertising').style.display = 'block'
+  document.getElementById('landrates').style.display = 'none'
+  document.getElementById('sbp').style.display = 'none'
+  document.getElementById('loadingz').style.display = 'none'
+}
+
+function loadingz() {
+  document.getElementById('loadingz').style.display = 'block'
+  document.getElementById('advertising').style.display = 'none'
+  document.getElementById('landrates').style.display = 'none'
+  document.getElementById('sbp').style.display = 'none'
+}

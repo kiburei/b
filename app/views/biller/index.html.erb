@@ -1,1 +1,193 @@
-<p>Upload Excel</p>
+<!-- <p>Upload Excel</p> -->
+
+<!-- <%= form_tag(root_url) do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import File" %>
+<% end %> -->
+
+
+<div id="sbp" style="display: none;">
+  <h2>Single Business Permit Bills</h2>
+  <table>
+    <thead>
+      <th>Business ID</th>
+      <th>Amount</th>
+      <th>Mpesa Number</th>
+      <th>Contact Number</th>
+      <th>Email</th>
+      <th>Payment Mode</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Third Party Ref</th>
+      <th>Channel Response</th>
+      <th>User Action</th>
+      <th>Channel Used</th>
+      <!-- add dynamic columns -->
+
+    </thead>
+    <tbody>
+      <% @sbp.each do |bill| %>
+      <tr>
+        <td><%= bill.reference_number %></td>
+        <td><%= bill.amount %></td>
+        <td><%= bill.mpesa_number %></td>
+        <td><%= bill.contact_number %></td>
+        <td><%= bill.email %></td>
+        <td><%= bill.payment_mode %></td>
+        <td><%= bill.due_date %></td>
+        <td><%= bill.status %></td>
+        <td><%= bill.third_party_ref_no %></td>
+        <td><%= bill.channel_response %></td>
+        <td><%= bill.user_action %></td>
+        <td><%= bill.channel_used %></td>
+        <!-- add dynamic columns -->
+        <td><%= link_to 'push', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'sms', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'email', root_url, class: 'btn blue lighten-2' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<div id="landrates" style="display: none;">
+  <h2>Land Rate Bills</h2>
+  <table>
+    <thead>
+      <th>L/R No.</th>
+      <th>Amount</th>
+      <th>Mpesa Number</th>
+      <th>Contact Number</th>
+      <th>Email</th>
+      <th>Payment Mode</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Third Party Ref</th>
+      <th>Channel Response</th>
+      <th>User Action</th>
+      <th>Channel Used</th>
+      <!-- add dynamic columns -->
+    </thead>
+    <tbody>
+      <% @lr.each do |bill| %>
+      <tr>
+        <td><%= bill.reference_number %></td>
+        <td><%= bill.amount %></td>
+        <td><%= bill.mpesa_number %></td>
+        <td><%= bill.contact_number %></td>
+        <td><%= bill.email %></td>
+        <td><%= bill.payment_mode %></td>
+        <td><%= bill.due_date %></td>
+        <td><%= bill.status %></td>
+        <td><%= bill.third_party_ref_no %></td>
+        <td><%= bill.channel_response %></td>
+        <td><%= bill.user_action %></td>
+        <td><%= bill.channel_used %></td>
+        <!-- add dynamic columns -->
+        <td><%= link_to 'push', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'sms', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'email', root_url, class: 'btn blue lighten-2' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<div id="advertising" style="display: none;">
+  <h2>Advertising Bills</h2>
+  <table>
+    <thead>
+      <th>Reference Number</th>
+      <th>Type</th>
+      <th>Location</th>
+      <th>Amount</th>
+      <th>Mpesa Number</th>
+      <th>Contact Number</th>
+      <th>Email</th>
+      <th>Payment Mode</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Third Party Ref</th>
+      <th>Channel Response</th>
+      <th>User Action</th>
+      <th>Channel Used</th>
+      <!-- add dynamic columns -->
+    </thead>
+    <tbody>
+      <% @ad.each do |bill| %>
+      <tr>
+        <td><%= bill.reference_number %></td>
+        <td><%= bill.ad_type %></td>
+        <td><%= bill.location %></td>
+        <td><%= bill.amount %></td>
+        <td><%= bill.mpesa_number %></td>
+        <td><%= bill.contact_number %></td>
+        <td><%= bill.email %></td>
+        <td><%= bill.payment_mode %></td>
+        <td><%= bill.due_date %></td>
+        <td><%= bill.status %></td>
+        <td><%= bill.third_party_ref_no %></td>
+        <td><%= bill.channel_response %></td>
+        <td><%= bill.user_action %></td>
+        <td><%= bill.channel_used %></td>
+        <!-- add dynamic columns -->
+        <td><%= link_to 'Mpesa', push_path, method: 'post', class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'sms', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'email', root_url, class: 'btn blue lighten-2' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<div id="loadingz" style="display: none;">
+  <h2>Loading Zone Bills</h2>
+  <table>
+    <thead>
+      <th>Reference Number</th>
+      <th>Street</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Mpesa Number</th>
+      <th>Contact Number</th>
+      <th>Email</th>
+      <th>Payment Mode</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Third Party Ref</th>
+      <th>Channel Response</th>
+      <th>User Action</th>
+      <th>Channel Used</th>
+      <th></th>
+      <!-- add dynamic columns -->
+    </thead>
+    <tbody>
+      <% @lz.each do |bill| %>
+      <tr>
+        <td><%= bill.reference_number %></td>
+        <td><%= bill.street %></td>
+        <td><%= bill.desc %></td>
+        <td><%= bill.amount %></td>
+        <td><%= bill.mpesa_number %></td>
+        <td><%= bill.contact_number %></td>
+        <td><%= bill.email %></td>
+        <td><%= bill.payment_mode %></td>
+        <td><%= bill.due_date %></td>
+        <td><%= bill.status %></td>
+        <td><%= bill.third_party_ref_no %></td>
+        <td><%= bill.channel_response %></td>
+        <td><%= bill.user_action %></td>
+        <td><%= bill.channel_used %></td>
+        <!-- add dynamic columns -->
+        <td><%= link_to 'push', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'sms', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'email', root_url, class: 'btn blue lighten-2' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

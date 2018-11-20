@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181114121233) do
+ActiveRecord::Schema.define(version: 20181120124744) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "service"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 20181114121233) do
     t.text     "message",            limit: 2147483647
     t.datetime "created_at",                                                     null: false
     t.datetime "updated_at",                                                     null: false
+    t.string   "street"
+    t.string   "desc"
+    t.string   "ad_type"
+    t.string   "location"
   end
 
 end

@@ -4,7 +4,13 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+# excel imports
+gem "roo", "~> 2.7.0"
 
+gem 'materialize-sass', '~> 1.0.0'
+gem 'material_icons'
+
+gem 'rest-client'
 # database
 gem 'tiny_tds', '~>2.0.0'
 gem 'activerecord-sqlserver-adapter'
