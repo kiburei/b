@@ -11,6 +11,9 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 
 gem 'rest-client'
+
+gem 'sms-easy'
+
 # database
 gem 'tiny_tds', '~>2.0.0'
 gem 'activerecord-sqlserver-adapter'

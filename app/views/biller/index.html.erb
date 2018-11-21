@@ -1,10 +1,37 @@
-<!-- <p>Upload Excel</p> -->
-
-<!-- <%= form_tag(root_url) do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import File" %>
-<% end %> -->
-
+<div id="dashboard">
+  <div class="stats">
+    <div class="card">
+      <div class="card-info">
+        <h5>Total Revenue</h5>
+        <span class="money">Total Revenue</br> <%= number_to_currency(rand(10000000..200000000), unit: "KES ")  %></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-info">
+        <h5>Business Permits</h5>
+        <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-info">
+        <h5>Land Rates</h5>
+        <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-info">
+        <h5>Outdoor Advertising</h5>
+        <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-info">
+        <h5>Loading Zones</h5>
+        <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="sbp" style="display: none;">
   <h2>Single Business Permit Bills</h2>
@@ -41,9 +68,9 @@
         <td><%= bill.user_action %></td>
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
-        <td><%= link_to 'push', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'Mpesa', root_url, class: 'btn blue lighten-2' %></td>
         <td><%= link_to 'sms', root_url, class: 'btn blue lighten-2' %></td>
-        <td><%= link_to 'email', root_url, class: 'btn blue lighten-2' %></td>
+        <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
       <% end %>
     </tbody>
@@ -134,8 +161,8 @@
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
         <td><%= link_to 'Mpesa', push_path, method: 'post', class: 'btn blue lighten-2' %></td>
-        <td><%= link_to 'sms', root_url, class: 'btn blue lighten-2' %></td>
-        <td><%= link_to 'email', root_url, class: 'btn blue lighten-2' %></td>
+        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
+        <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
       <% end %>
     </tbody>

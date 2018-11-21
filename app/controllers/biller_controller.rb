@@ -7,6 +7,10 @@ class BillerController < ApplicationController
     @lz = Bill.where(service: "LZ")
   end
 
+  def dashboard
+
+  end
+
   def push
     RestClient.post 'http://processor.nouveta.co.ke/index.php', {PhoneNumber: '0728592629', paymentMode: 'Mpesa', AccountReference: 'Biller', Amount: 1222, api_key: "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"}
     respond_to do |format|
