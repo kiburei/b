@@ -14,7 +14,7 @@ development:
   <<: *default
   database: billing
   username: SA
-  password: Andrew1991
+  password: Nouveta2018
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
