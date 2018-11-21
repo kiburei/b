@@ -14,7 +14,7 @@ class BillerController < ApplicationController
   def push
     mpesa_number = Bill.find(params[:id]).mpesa_number
     amount = Bill.find(params[:id]).amount
-    RestClient.post 'http://processor.nouveta.co.ke/index.php', {PhoneNumber: "0728592629", paymentMode: 'Mpesa', AccountReference: 'Biller', Amount: 1, api_key: "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"}
+    RestClient.post 'http://processor.nouveta.co.ke/index.php', {PhoneNumber: "0720967297", paymentMode: 'Mpesa', AccountReference: 'Biller', Amount: 1, api_key: "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"}
     Bill.find(params[:id]).update(status: "STK Request", user_action: "Invoiced", channel_used: "Mpesa")
     redirect_to root_url
   end

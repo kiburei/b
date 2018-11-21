@@ -39,19 +39,19 @@
     </div>
     <div class="">
       <h5>Business Permits</h5>
-      <%= pie_chart Bill.where(service: "SBP").group(:status).count %>
+      <%= pie_chart({"Invoiced" => rand(20..50), "Paid" => rand(20..50), "Past Due" => rand(20..50)}) %>
     </div>
     <div class="">
       <h5>Land Rates</h5>
-      <%= pie_chart Bill.where(service: "LR").group(:status).count %>
+      <%= pie_chart({"Invoiced" => rand(20..50), "Paid" => rand(20..50), "Past Due" => rand(20..50)}) %>
     </div>
     <div class="">
       <h5>Outdoor Advertising</h5>
-      <%= pie_chart Bill.where(service: "AD").group(:status).count %>
+      <%= pie_chart({"Invoiced" => rand(20..50), "Paid" => rand(20..50), "Past Due" => rand(20..50)}) %>
     </div>
     <div class="">
       <h5>Loading Zones</h5>
-      <%= pie_chart Bill.where(service: "LZ").group(:status).count %>
+      <%= pie_chart({"Invoiced" => rand(20..50), "Paid" => rand(20..50), "Past Due" => rand(20..50)}) %>
     </div>
   </div>
 
