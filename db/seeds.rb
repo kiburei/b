@@ -57,7 +57,7 @@ Bill.delete_all
   end
 
 Bill.all.each do |var|
-  var.update(user_action: "Invoiced", status: ["STK Request", "Paid", "Failed"].sample, channel_used: ["Mpesa" , "SMS", "Email"].sample)
+  var.update(user_action: "Invoiced", status: ["Invoiced", "Paid", "Failed"].sample, channel_used: ["Mpesa" , "SMS", "Email"].sample)
 end
 
 Bill.where(status: "Paid").each do |var|
