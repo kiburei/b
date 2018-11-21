@@ -65,14 +65,12 @@
       <th>Business ID</th>
       <th>Amount</th>
       <th>Mpesa Number</th>
-      <th>Contact Number</th>
-      <th>Email</th>
+      <th>Contact Information</th>
       <th>Payment Mode</th>
       <th>Due Date</th>
       <th>Status</th>
       <th>Third Party Ref</th>
       <th>Channel Response</th>
-      <th>User Action</th>
       <th>Channel Used</th>
       <!-- add dynamic columns -->
 
@@ -83,14 +81,12 @@
         <td><%= bill.reference_number %></td>
         <td><%= bill.amount %></td>
         <td><%= bill.mpesa_number %></td>
-        <td><%= bill.contact_number %></td>
-        <td><%= bill.email %></td>
+        <td><%= bill.contact_number %> <%= bill.email %></td>
         <td><%= bill.payment_mode %></td>
         <td><%= bill.due_date %></td>
         <td><%= bill.status %></td>
         <td><%= bill.third_party_ref_no %></td>
         <td><%= bill.channel_response %></td>
-        <td><%= bill.user_action %></td>
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
         <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
@@ -110,8 +106,7 @@
       <th>L/R No.</th>
       <th>Amount</th>
       <th>Mpesa Number</th>
-      <th>Contact Number</th>
-      <th>Email</th>
+      <th>Contact Information</th>
       <th>Payment Mode</th>
       <th>Due Date</th>
       <th>Status</th>
@@ -127,14 +122,12 @@
         <td><%= bill.reference_number %></td>
         <td><%= bill.amount %></td>
         <td><%= bill.mpesa_number %></td>
-        <td><%= bill.contact_number %></td>
-        <td><%= bill.email %></td>
+        <td><%= bill.contact_number %> <%= bill.email %></td>
         <td><%= bill.payment_mode %></td>
         <td><%= bill.due_date %></td>
         <td><%= bill.status %></td>
         <td><%= bill.third_party_ref_no %></td>
         <td><%= bill.channel_response %></td>
-        <td><%= bill.user_action %></td>
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
         <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
@@ -156,8 +149,7 @@
       <th>Location</th>
       <th>Amount</th>
       <th>Mpesa Number</th>
-      <th>Contact Number</th>
-      <th>Email</th>
+      <th>Contact Information</th>
       <th>Payment Mode</th>
       <th>Due Date</th>
       <th>Status</th>
@@ -175,8 +167,7 @@
         <td><%= bill.location %></td>
         <td><%= bill.amount %></td>
         <td><%= bill.mpesa_number %></td>
-        <td><%= bill.contact_number %></td>
-        <td><%= bill.email %></td>
+        <td><%= bill.contact_number %> <%= bill.email %></td>
         <td><%= bill.payment_mode %></td>
         <td><%= bill.due_date %></td>
         <td><%= bill.status %></td>
@@ -204,8 +195,7 @@
       <th>Description</th>
       <th>Amount</th>
       <th>Mpesa Number</th>
-      <th>Contact Number</th>
-      <th>Email</th>
+      <th>Contact Information</th>
       <th>Payment Mode</th>
       <th>Due Date</th>
       <th>Status</th>
@@ -224,8 +214,7 @@
         <td><%= bill.desc %></td>
         <td><%= bill.amount %></td>
         <td><%= bill.mpesa_number %></td>
-        <td><%= bill.contact_number %></td>
-        <td><%= bill.email %></td>
+        <td><%= bill.contact_number %> <%= bill.email %></td>
         <td><%= bill.payment_mode %></td>
         <td><%= bill.due_date %></td>
         <td><%= bill.status %></td>
