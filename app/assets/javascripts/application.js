@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize
+//= require Chart.bundle
+//= require chartkick
 
 function list() {
   document.getElementById('list').style.display = 'block';

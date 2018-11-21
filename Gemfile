@@ -14,6 +14,10 @@ gem 'rest-client'
 
 gem 'sms-easy'
 
+gem "chartkick"
+
+gem 'groupdate'
+
 # database
 gem 'tiny_tds', '~>2.0.0'
 gem 'activerecord-sqlserver-adapter'

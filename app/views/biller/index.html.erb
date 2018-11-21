@@ -1,36 +1,61 @@
 <div id="dashboard">
   <div class="stats">
-    <div class="card">
+    <div class="card blue lighten-2">
       <div class="card-info">
         <h5>Total Revenue</h5>
         <span class="money">Total Revenue</br> <%= number_to_currency(rand(10000000..200000000), unit: "KES ")  %></span>
       </div>
     </div>
-    <div class="card">
+    <div class="card red lighten-2">
       <div class="card-info">
         <h5>Business Permits</h5>
         <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
       </div>
     </div>
-    <div class="card">
+    <div class="card cyan lighten-2">
       <div class="card-info">
         <h5>Land Rates</h5>
         <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
       </div>
     </div>
-    <div class="card">
+    <div class="card green lighten-2">
       <div class="card-info">
         <h5>Outdoor Advertising</h5>
         <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
       </div>
     </div>
-    <div class="card">
+    <div class="card purple lighten-2">
       <div class="card-info">
         <h5>Loading Zones</h5>
         <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
       </div>
     </div>
   </div>
+
+  <div class="stats">
+    <div class="">
+      <h5>Total Revenue</h5>
+      <%= pie_chart Bill.group(:service).count %>
+    </div>
+    <div class="">
+      <h5>Business Permits</h5>
+      <%= pie_chart Bill.where(service: "SBP").group(:status).count %>
+    </div>
+    <div class="">
+      <h5>Land Rates</h5>
+      <%= pie_chart Bill.where(service: "LR").group(:status).count %>
+    </div>
+    <div class="">
+      <h5>Outdoor Advertising</h5>
+      <%= pie_chart Bill.where(service: "AD").group(:status).count %>
+    </div>
+    <div class="">
+      <h5>Loading Zones</h5>
+      <%= pie_chart Bill.where(service: "LZ").group(:status).count %>
+    </div>
+  </div>
+
+
 </div>
 
 <div id="sbp" style="display: none;">
