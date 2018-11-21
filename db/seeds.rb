@@ -10,7 +10,7 @@ Bill.delete_all
   rand(10..20).times do
     Bill.create!(service: "SBP",
       reference_number: "SBP" + Time.now.to_i.to_s,
-      amount: rand(1..10),
+      amount: [1000,5000,15000,2000,3000,2500].sample,
       mpesa_number: ["0728592629", "0720967297", "0721523997", "0722941572"].sample,
       contact_number: ["0728592629", "0720967297", "0721523997", "0722941572"].sample,
       email: ["crispin@gmail.com", "mwangi@nouveta.tech", "hezron@nouveta.tech", "patrick@nouveta.tech"].sample,
@@ -21,7 +21,7 @@ Bill.delete_all
   rand(10..20).times do
     Bill.create!(service: "LR",
       reference_number: "LR" + Time.now.to_i.to_s,
-      amount: rand(1..10),
+      amount: [1000,5000,15000,2000,3000,2500].sample,
       mpesa_number: ["0728592629", "0720967297", "0721523997", "0722941572"].sample,
       contact_number: ["0728592629", "0720967297", "0721523997", "0722941572"].sample,
       email: ["crispin@gmail.com", "mwangi@nouveta.tech", "hezron@nouveta.tech", "patrick@nouveta.tech"].sample,
@@ -32,7 +32,7 @@ Bill.delete_all
   rand(10..20).times do
     Bill.create!(service: "AD",
       reference_number: "AD" + Time.now.to_i.to_s,
-      amount: rand(1..10),
+      amount: [1000,5000,15000,2000,3000,2500].sample,
       ad_type: ["Billboard", "Petrol Station", "Bus Stop"].sample,
       location: ["0.06..34.2861", "0.06..30.2861", "0.034..44.2861", "0.06..36.2861"].sample,
       mpesa_number: ["0728592629", "0720967297", "0721523997", "0722941572"].sample,
@@ -45,7 +45,7 @@ Bill.delete_all
   rand(10..20).times do
     Bill.create!(service: "LZ",
       reference_number: "LZ" + Time.now.to_i.to_s,
-      amount: rand(1..10),
+      amount: [1000,5000,15000,2000,3000,2500].sample,
       street: ["Hospital Rd", "Stima Rd", "Court Rd"].sample,
       desc: ["ATM", "Equity Bank", "Siaya Supermarket"].sample,
       mpesa_number: ["0728592629", "0720967297", "0721523997", "0722941572"].sample,
