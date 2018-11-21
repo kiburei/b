@@ -68,8 +68,8 @@
         <td><%= bill.user_action %></td>
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
-        <td><%= link_to 'Mpesa', root_url, class: 'btn blue lighten-2' %></td>
-        <td><%= link_to 'sms', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
+        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
         <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
       <% end %>
@@ -112,9 +112,9 @@
         <td><%= bill.user_action %></td>
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
-        <td><%= link_to 'push', root_url, class: 'btn blue lighten-2' %></td>
-        <td><%= link_to 'sms', root_url, class: 'btn blue lighten-2' %></td>
-        <td><%= link_to 'email', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
+        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
+        <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
       <% end %>
     </tbody>
@@ -160,7 +160,7 @@
         <td><%= bill.user_action %></td>
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
-        <td><%= link_to 'Mpesa', push_path, method: 'post', class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
         <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
         <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
@@ -209,9 +209,9 @@
         <td><%= bill.user_action %></td>
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
-        <td><%= link_to 'push', root_url, class: 'btn blue lighten-2' %></td>
-        <td><%= link_to 'sms', root_url, class: 'btn blue lighten-2' %></td>
-        <td><%= link_to 'email', root_url, class: 'btn blue lighten-2' %></td>
+        <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
+        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
+        <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
       <% end %>
     </tbody>

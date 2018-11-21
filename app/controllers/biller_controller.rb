@@ -12,10 +12,15 @@ class BillerController < ApplicationController
   end
 
   def push
-    RestClient.post 'http://processor.nouveta.co.ke/index.php', {PhoneNumber: '0728592629', paymentMode: 'Mpesa', AccountReference: 'Biller', Amount: 1222, api_key: "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"}
-    respond_to do |format|
-      root_url
-    end
+    mpesa_number = Bill.find(params[:id]).mpesa_number
+    amount = Bill.find(params[:id]).amount
+    RestClient.post 'http://processor.nouveta.co.ke/index.php', {PhoneNumber: mpesa_number, paymentMode: 'Mpesa', AccountReference: 'Biller', Amount: amount, api_key: "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"}
+    Bill.find(params[:id]).update(status: "STK Request", user_action: "Invoiced", channel_used: "Mpesa")
+    redirect_to root_url
+  end
+
+  def callback
+    Bill.find(params[:id]).update(status: "STK Request", user_action: "Invoiced", channel_used: "Mpesa", third_party_ref_no: "", channel_response: "")
   end
 
   def send_sms

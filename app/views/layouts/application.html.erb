@@ -8,8 +8,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
     <ul id="slide-out" class="sidenav sidenav-fixed">
+      <div class="identity">
+        <h4>Billing Portal</h4>
+        <p>Logged in as Admin</p>
+      </div>
       <li><a href="#!">Dashboard</a></li>
-      <li><a onclick="list()" >Revenue</a>
+      <li><a onclick="list()" >Revenue Streams</a>
         <ul id="list" class="sub" style="display: none;">
           <li> <a onclick="sbp()">Business Permit</a> </li>
           <li> <a onclick="landrates()">Land Rates</a> </li>
