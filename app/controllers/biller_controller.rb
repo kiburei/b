@@ -18,8 +18,8 @@ class BillerController < ApplicationController
     response = RestClient::Request.execute(
       method: :post,
       url: 'http://processor.nouveta.co.ke/index.php',
-      params: {PhoneNumber: "0728592629", paymentMode: 'Mpesa', AccountReference: 'Biller', Amount: 1, api_key: "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"}
-      # headers: {api_key: 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'}
+      params: {PhoneNumber: "0728592629", paymentMode: 'Mpesa', AccountReference: 'Biller', Amount: 1, api_key: "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"},
+      headers: {api_key: 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'}
     )
     # RestClient.post 'http://processor.nouveta.co.ke/index.php', {PhoneNumber: "0720967297", paymentMode: 'Mpesa', AccountReference: 'Biller', Amount: 1, api_key: "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"}
     redirect_to root_url
