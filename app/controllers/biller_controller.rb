@@ -53,9 +53,9 @@ class BillerController < ApplicationController
     sms.message = 'Test message'
     sms.callback_data = 'Any string'
     result = sms_client.send_sms(sms)
-    client_correlator = result.client_correlator
-    delivery_status = sms_client.query_delivery_status(client_correlator)
-    puts delivery_status
+    # client_correlator = result.client_correlator
+    # delivery_status = sms_client.query_delivery_status(client_correlator)
+    redirect_to root_url, notice: "SMS Sent"
 
   end
 
