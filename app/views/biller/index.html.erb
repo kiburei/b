@@ -139,7 +139,7 @@
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
         <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
-        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
+        <td> <%= link_to 'SMS', sms_path, class: 'btn blue lighten-2' %> </td>
         <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
       <% end %>
@@ -181,7 +181,7 @@
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
         <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
-        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
+        <td> <%= link_to 'SMS', sms_path, class: 'btn blue lighten-2' %> </td>
         <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
       <% end %>
@@ -224,7 +224,7 @@
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
         <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
-        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
+        <td> <%= link_to 'SMS', sms_path, class: 'btn blue lighten-2' %> </td>
         <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
       <% end %>
@@ -267,7 +267,7 @@
         <td><%= bill.channel_used %></td>
         <!-- add dynamic columns -->
         <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
-        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
+        <td> <%= link_to 'SMS', sms_path, class: 'btn blue lighten-2' %> </td>
         <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
       </tr>
       <% end %>
