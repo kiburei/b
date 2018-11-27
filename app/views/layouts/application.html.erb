@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Billing</title>
+    <title>Covernet</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,16 +9,17 @@
   </head>
     <ul id="slide-out" class="sidenav sidenav-fixed">
       <div class="identity">
-        <h4>Billing Portal</h4>
+        <h4>Covernet Billing Portal</h4>
         <p>Logged in as Admin</p>
       </div>
       <li><a href="#!">Dashboard</a></li>
-      <li><a onclick="list()" >Revenue Streams</a>
+      <li><a onclick="list()" >Policy Covers</a>
         <ul id="list" class="sub" style="display: none;">
-          <li> <a onclick="sbp()">Business Permit</a> </li>
-          <li> <a onclick="landrates()">Land Rates</a> </li>
-          <li> <a onclick="advertising()">Outdoor Advertising</a> </li>
-          <li> <a onclick="loadingz()">Loading Zones</a> </li>
+          <li> <a onclick="motor()">Motor Policies</a> </li>
+          <li> <a onclick="health()">Health Policies</a> </li>
+          <li> <a onclick="general()">General Policies</a> </li>
+          <li> <a onclick="life()">Life Policies</a> </li>
+          <li> <a onclick="education()">Education Policies</a> </li>
         </ul>
       </li>
     </ul>

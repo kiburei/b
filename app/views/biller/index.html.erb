@@ -2,67 +2,75 @@
   <div class="stats">
     <div class="card blue lighten-2">
       <div class="card-info">
-        <h5>Total Revenue</h5>
-        <span class="money">Total Revenue</br> <%= number_to_currency(rand(10000000..200000000), unit: "KES ")  %></span>
+        <h5>Motor Insurance</h5>
+        <span class="money">Total</br> <%= number_to_currency(rand(10000000..200000000), unit: "KES ")  %></span>
       </div>
     </div>
     <div class="card red lighten-2">
       <div class="card-info">
-        <h5>Business Permits</h5>
-        <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
+        <h5>Health Insurance</h5>
+        <span class="money">Total</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
       </div>
     </div>
     <div class="card cyan lighten-2">
       <div class="card-info">
-        <h5>Land Rates</h5>
-        <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
+        <h5>General Insurance</h5>
+        <span class="money">Total</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
       </div>
     </div>
     <div class="card green lighten-2">
       <div class="card-info">
-        <h5>Outdoor Advertising</h5>
-        <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
+        <h5>Life Insurance</h5>
+        <span class="money">Total</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
       </div>
     </div>
     <div class="card purple lighten-2">
       <div class="card-info">
-        <h5>Loading Zones</h5>
-        <span class="money">Total Revenue</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
+        <h5>Education Insurance</h5>
+        <span class="money">Total</br> <%= number_to_currency(rand(100000..20000000), unit: "KES ")  %></span>
       </div>
     </div>
   </div>
 
   <div class="stats">
     <div class="">
-      <h5>Total Revenue</h5>
-      <%= pie_chart Bill.group(:service).count %>
-    </div>
-    <div class="">
-      <h5>Business Permits</h5>
+      <h5>Motor Insurance</h5>
       <%= pie_chart({"Invoiced" => rand(90..150), "Paid" => rand(20..50), "Past Due" => rand(50..150)}) %>
     </div>
     <div class="">
-      <h5>Land Rates</h5>
+      <h5>Health Insurance</h5>
       <%= pie_chart({"Invoiced" => rand(90..150), "Paid" => rand(20..50), "Past Due" => rand(50..150)}) %>
     </div>
     <div class="">
-      <h5>Outdoor Advertising</h5>
+      <h5>General Insurance</h5>
       <%= pie_chart({"Invoiced" => rand(90..150), "Paid" => rand(20..50), "Past Due" => rand(50..150)}) %>
     </div>
     <div class="">
-      <h5>Loading Zones</h5>
+      <h5>Life Insurance</h5>
+      <%= pie_chart({"Invoiced" => rand(90..150), "Paid" => rand(20..50), "Past Due" => rand(50..150)}) %>
+    </div>
+    <div class="">
+      <h5>Education Insurance</h5>
       <%= pie_chart({"Invoiced" => rand(90..150), "Paid" => rand(20..50), "Past Due" => rand(50..150)}) %>
     </div>
   </div>
 
-
+  <div class="row">
+    <h4>Upload Due Policies</h4>
+    <div class="">
+      <%= form_tag import_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<div id="sbp" style="display: none;">
-  <h2>Single Business Permit Bills</h2>
+<div id="motor" style="display: none;">
+  <h2>Motor Insurance due Policies</h2>
   <table>
     <thead>
-      <th>Business ID</th>
+      <th>Policy Number</th>
       <th>Amount</th>
       <th>Mpesa Number</th>
       <th>Contact Information</th>
@@ -76,7 +84,48 @@
 
     </thead>
     <tbody>
-      <% @sbp.each do |bill| %>
+      <% @motor.each do |bill| %>
+      <tr>
+        <td><%= bill.reference_number %></td>
+        <td><%= bill.amount %></td>
+        <td><%= bill.mpesa_number %></td>
+        <td><%= bill.contact_number %></br> <%= bill.email %></td>
+        <td><%= bill.payment_mode %></td>
+        <td><%= bill.due_date %></td>
+        <td><%= bill.status %></td>
+        <td><%= bill.third_party_ref_no %></td>
+        <td><%= bill.channel_response %></td>
+        <td><%= bill.channel_used %></td>
+        <!-- add dynamic columns -->
+        <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
+        <td> <%= link_to 'SMS', sms_path, class: 'btn blue lighten-2' %> </td>
+        <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<div id="health" style="display: none;">
+  <h2>Health Policies Past Due</h2>
+  <table>
+    <thead>
+      <th>Policy Number</th>
+      <th>Amount</th>
+      <th>Mpesa Number</th>
+      <th>Contact Information</th>
+      <th>Payment Mode</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Third Party Ref</th>
+      <th>Channel Response</th>
+      <th>User Action</th>
+      <th>Channel Used</th>
+      <!-- add dynamic columns -->
+    </thead>
+    <tbody>
+      <% @health.each do |bill| %>
       <tr>
         <td><%= bill.reference_number %></td>
         <td><%= bill.amount %></td>
@@ -99,11 +148,11 @@
 
 </div>
 
-<div id="landrates" style="display: none;">
-  <h2>Land Rate Bills</h2>
+<div id="general" style="display: none;">
+  <h2>General Cover Policies Past Due</h2>
   <table>
     <thead>
-      <th>L/R No.</th>
+      <th>Policy Number</th>
       <th>Amount</th>
       <th>Mpesa Number</th>
       <th>Contact Information</th>
@@ -117,54 +166,9 @@
       <!-- add dynamic columns -->
     </thead>
     <tbody>
-      <% @lr.each do |bill| %>
+      <% @general.each do |bill| %>
       <tr>
         <td><%= bill.reference_number %></td>
-        <td><%= bill.amount %></td>
-        <td><%= bill.mpesa_number %></td>
-        <td><%= bill.contact_number %></br> <%= bill.email %></td>
-        <td><%= bill.payment_mode %></td>
-        <td><%= bill.due_date %></td>
-        <td><%= bill.status %></td>
-        <td><%= bill.third_party_ref_no %></td>
-        <td><%= bill.channel_response %></td>
-        <td><%= bill.channel_used %></td>
-        <!-- add dynamic columns -->
-        <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
-        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
-        <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-</div>
-
-<div id="advertising" style="display: none;">
-  <h2>Advertising Bills</h2>
-  <table>
-    <thead>
-      <th>Reference Number</th>
-      <th>Type</th>
-      <th>Location</th>
-      <th>Amount</th>
-      <th>Mpesa Number</th>
-      <th>Contact Information</th>
-      <th>Payment Mode</th>
-      <th>Due Date</th>
-      <th>Status</th>
-      <th>Third Party Ref</th>
-      <th>Channel Response</th>
-      <th>User Action</th>
-      <th>Channel Used</th>
-      <!-- add dynamic columns -->
-    </thead>
-    <tbody>
-      <% @ad.each do |bill| %>
-      <tr>
-        <td><%= bill.reference_number %></td>
-        <td><%= bill.ad_type %></td>
-        <td><%= bill.location %></td>
         <td><%= bill.amount %></td>
         <td><%= bill.mpesa_number %></td>
         <td><%= bill.contact_number %></br> <%= bill.email %></td>
@@ -186,13 +190,11 @@
 
 </div>
 
-<div id="loadingz" style="display: none;">
-  <h2>Loading Zone Bills</h2>
+<div id="life" style="display: none;">
+  <h2>Life Policies Past Due</h2>
   <table>
     <thead>
-      <th>Reference Number</th>
-      <th>Street</th>
-      <th>Description</th>
+      <th>Policy Number</th>
       <th>Amount</th>
       <th>Mpesa Number</th>
       <th>Contact Information</th>
@@ -207,11 +209,52 @@
       <!-- add dynamic columns -->
     </thead>
     <tbody>
-      <% @lz.each do |bill| %>
+      <% @life.each do |bill| %>
       <tr>
         <td><%= bill.reference_number %></td>
-        <td><%= bill.street %></td>
-        <td><%= bill.desc %></td>
+        <td><%= bill.amount %></td>
+        <td><%= bill.mpesa_number %></td>
+        <td><%= bill.contact_number %></br> <%= bill.email %></td>
+        <td><%= bill.payment_mode %></td>
+        <td><%= bill.due_date %></td>
+        <td><%= bill.status %></td>
+        <td><%= bill.third_party_ref_no %></td>
+        <td><%= bill.channel_response %></td>
+        <td><%= bill.user_action %></td>
+        <td><%= bill.channel_used %></td>
+        <!-- add dynamic columns -->
+        <td><%= link_to 'Mpesa', push_path(bill), method: 'post', class: 'btn blue lighten-2' %></td>
+        <td> <button onclick="sms()" class="btn blue lighten-2">SMS</button> </td>
+        <td> <button onclick="email()" class="btn blue lighten-2">Email</button> </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div id="education" style="display: none;">
+  hvjhbhb
+  <h2>Education Policies Past Due</h2>
+  <table>
+    <thead>
+      <th>Policy Number</th>
+      <th>Amount</th>
+      <th>Mpesa Number</th>
+      <th>Contact Information</th>
+      <th>Payment Mode</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Third Party Ref</th>
+      <th>Channel Response</th>
+      <th>User Action</th>
+      <th>Channel Used</th>
+      <th></th>
+      <!-- add dynamic columns -->
+    </thead>
+    <tbody>
+      <% @education.each do |bill| %>
+      <tr>
+        <td><%= bill.reference_number %></td>
         <td><%= bill.amount %></td>
         <td><%= bill.mpesa_number %></td>
         <td><%= bill.contact_number %></br> <%= bill.email %></td>

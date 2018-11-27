@@ -12,6 +12,8 @@ gem 'material_icons'
 
 gem 'rest-client'
 
+gem 'oneapi-ruby'
+
 gem 'sms-easy'
 
 gem "chartkick"
